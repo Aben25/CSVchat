@@ -6,7 +6,11 @@ import pandas as pd
 from pandasai import PandasAI
 
 load_dotenv()
-
+st.write("Secret Key", st.secrets["openai_api_key"])
+st.write(
+    "Has environment variables been set:",
+    os.environ["openai_api_key"] == st.secrets["openai_api_key"],
+)
 # store the API key in Secrets and add here
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
